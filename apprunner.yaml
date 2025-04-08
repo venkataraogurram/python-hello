@@ -4,8 +4,9 @@ build:
   commands:
     build:
       - pip install -r requirements.txt  
+  
+run: 
+  command: python server.py
   env:
     - name: NAME
       value: "Venkat"
-run: 
-  command: python server.py
