@@ -7,8 +7,4 @@ build:
   
 run: 
   command: python server.py
-  env:
-    - name: NAME
-      value: "Venkat"
-    - name: PORT
-      value: 8080
+ 
