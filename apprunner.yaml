@@ -10,3 +10,5 @@ run:
   env:
     - name: NAME
       value: "Venkat"
+    - name: PORT
+      value: 8080
