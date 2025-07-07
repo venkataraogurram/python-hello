@@ -9,6 +9,6 @@ build:
       - pip3 list | grep gunicorn
 run:
   runtime-version: 3.11.9
-  command: python -m gunicorn --version  # Changed to use python -m
+  command: python server.py   # python -m gunicorn --version Changed to use python -m
   network:
     port: 8000
