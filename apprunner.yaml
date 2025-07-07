@@ -3,15 +3,13 @@ runtime: python311
 build:
   commands:
     build:
-      - python3.11 -m ensurepip --upgrade
-      - python3.11 -m pip install Django
-      - python3.11 -m pip install -r requirements.txt
-      - python3.11 -m pip install gunicorn
+      - pip3 install -r requirements.txt
+      - pip3 install gunicorn==20.1.0 whitenoise==6.4.0
 run:
   runtime-version: 3.11
   command: sh startup.sh
   network:
     port: 8000
-  env:
-    - name: DJANGO_SETTINGS_MODULE
-      value: erichermanndotcom.settings
+  #env:
+    #- name: DJANGO_SETTINGS_MODULE
+     # value: erichermanndotcom.settings
