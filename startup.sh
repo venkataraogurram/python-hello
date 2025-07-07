@@ -1,6 +1,3 @@
 #!/bin/bash
-
-echo "=== STARTUP.SH IS RUNNING ==="
-
-# Option 1: Use python -m
-#exec python -m gunicorn --version
+echo "=== STARTING DJANGO APP ==="
+exec gunicorn myproject.wsgi:application --bind 0.0.0.0:8000
