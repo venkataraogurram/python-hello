@@ -3,10 +3,13 @@ runtime: python311
 build:
   commands:
     build:
-      - pip install -r requirements.txt
-      - python manage.py collectstatic --noinput
+      - python3.11 -m ensurepip --upgrade
+      - python3.11 -m pip install Django
+      - python3.11 -m pip install -r requirements.txt
+      - python3.11 -m pip install gunicorn
+      - python3.11 manage.py collectstatic --noinput
 run:
-  #runtime-version: 3.11
+  runtime-version: 3.11
   command: gunicorn erichermanndotcom.wsgi:application --bind 0.0.0.0:8000
   network:
     port: 8000
