@@ -4,11 +4,13 @@ build:
   commands:
     build:
       - pip3 install -r requirements.txt
-      - pip3 install gunicorn
-      - which gunicorn
-      - pip3 list | grep gunicorn
+      - python3 manage.py collectstatic --noinput
 run:
-  runtime-version: 3.11.9
-  command: python server.py   # python -m gunicorn --version Changed to use python -m
+  runtime-version: python311
+  command: ./startup.sh
   network:
     port: 8000
+  env:
+    - name: DJANGO_SETTINGS_MODULE
+      value: erichermanndotcom.settings
+
