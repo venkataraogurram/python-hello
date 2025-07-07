@@ -8,7 +8,7 @@ build:
       # - pip3 install --upgrade pip
       # - python -m pytest
 run:
-  runtime-version: 3.9.16  # or your specific Python version
+  #runtime-version: 3.9.16  # or your specific Python version
   command: python server.py
   network:
     port: 8080
