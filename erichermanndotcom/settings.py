@@ -14,7 +14,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
 ]
 
-ROOT_URLCONF = 'myproject.urls'
+ROOT_URLCONF = 'erichermanndotcom.urls'
 
 DATABASES = {
     'default': {
@@ -24,3 +24,6 @@ DATABASES = {
 }
 
 USE_TZ = True
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'staticfiles')
