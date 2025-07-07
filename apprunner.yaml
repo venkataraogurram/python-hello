@@ -1,13 +1,13 @@
 version: 1.0
-runtime: python311
+runtime: python3
 build:
   commands:
     build:
-      - pip3 install -r requirements.txt
-      - python3 manage.py collectstatic --noinput
+      - pip install -r requirements.txt
+      - python manage.py collectstatic --noinput
 run:
-  runtime-version: python311
-  command: ./startup.sh
+  runtime-version: 3.11
+  command: gunicorn erichermanndotcom.wsgi:application --bind 0.0.0.0:8000
   network:
     port: 8000
   env:
