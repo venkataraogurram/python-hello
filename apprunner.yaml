@@ -9,9 +9,13 @@ build:
       - pip3 install -r requirements.txt
       - which gunicorn
       - chmod +x startup.sh
-
 run:
-  command: ./startup.sh
+  pre-run:
+    - /usr/local/bin/python3 -m venv venv
+    - source venv/bin/activate
+    - pip3 install -r requirements.txt
+    - which gunicorn
+  command: /usr/local/bin/gunicorn erichermanndotcom.wsgi:application --bind=0.0.0.0:8000
   network:
     port: 8000
   env:
