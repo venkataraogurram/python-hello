@@ -4,12 +4,13 @@ runtime: python311
 build:
   commands:
     build:
-      - python -m virtualenv venv
+      - pip3 install virtualenv
+      - python3 -m virtualenv venv
       - source venv/bin/activate
       - pip install -r requirements.txt
 
 run:
-  command: source venv/bin/activate && /usr/local/bin/gunicorn erichermanndotcom.wsgi:application --bind=[IP_ADDRESS]
+  command: source venv/bin/activate && /usr/local/bin/gunicorn erichermanndotcom.wsgi:application --bind=0.0.0.0:8000
   network:
     port: 8000
   env:
