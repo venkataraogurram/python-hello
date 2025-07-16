@@ -4,7 +4,7 @@ build:
   commands:
     build:
       - which python 
-      - python3 -m venv venv
+      - python -m venv venv
       - source venv/bin/activate
       - pip install -r requirements.txt
 run:
@@ -12,6 +12,3 @@ run:
   network:
     port: 8000
   
-env:
-  - name: DJANGO_SETTINGS_MODULE
-    value: "erichermanndotcom.settings"
