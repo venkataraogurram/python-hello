@@ -1,6 +1,9 @@
 version: 1.0
 runtime: python311
-
+build:
+  commands:
+    build:
+      - echo "Starting build phase..."
 run:
   pre-run:
     - /usr/local/bin/python3 -m venv venv
