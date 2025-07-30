@@ -14,5 +14,5 @@ run:
   network:
     port: 8000
   env:
-    - name: DJANGO_SETTINGS_MODULE
-      value: erichermanndotcom.settings
+    - name: PASSWORD
+      value: erichermanndotcom
